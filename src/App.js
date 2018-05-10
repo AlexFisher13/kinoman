@@ -1,31 +1,42 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 const API_KEY = 'cb02f59c';
+const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
+
 
 class App extends Component {
+  constructor(props){
+      super(props);
+      this.state = {}
+  }
 
-  render() {
-    const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
+    componentDidMount() {
+        axios.get(url)
+            .then(res => {
+                const movie = res.data;
+                this.setState({ movie });
+            })
+    }
 
-    const req = fetch(url)
-        .then(response => response.json())
-        .catch(err => err)
-
-    req.then(data => {
-        console.log(data)
-    })
-
-    return (
-      <div>
-        <header>
-          <h1>Welcome to Kinoman</h1>
-        </header>
-        <div>
-            <h3>Finded film</h3>
-            <div></div>
-        </div>
-      </div>
-    );
+   render() {
+      return (
+          <div>
+              <header>
+                  <h1>Welcome to Kinoman</h1>
+              </header>
+              <div>
+                  <h3>Finded film</h3>
+                  <div>
+                      <h3>
+                          {
+                              this.state.movie
+                          }
+                      </h3>
+                  </div>
+              </div>
+          </div>
+      );
   }
 }
 
