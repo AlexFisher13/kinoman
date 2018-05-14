@@ -5,5 +5,11 @@ const initialState = [
 ]
 
 export default function movieState(store=initialState, action) {
+    if (action.type === 'SEARCH_MOVIE') {
+        return [
+            ...store,
+            {Title: action.payload, Year: '2021'}
+        ]
+    }
     return store
 }

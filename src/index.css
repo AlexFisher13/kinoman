@@ -22,7 +22,7 @@ h1 {
   font-weight: 400;
   color: white;
 }
-form {
+.search {
   display: grid;
   justify-content: center;
   margin: auto 0;
