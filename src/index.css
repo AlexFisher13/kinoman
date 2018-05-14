@@ -6,12 +6,17 @@ body {
   margin: 10px 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 0.8fr;
+  grid-template-columns: 0.7fr;
   justify-content: center;
 }
 /*div {*/
   /*border: 1px solid red;*/
 /*}*/
+
+.container {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
 header {
   padding: 0 30px;
   display: grid;
@@ -40,7 +45,7 @@ input:focus,
 button:focus{
   outline: none;
 }
-button {
+.search button {
   height: 30px;
   border: 0;
   background-color: lightgray;
@@ -49,7 +54,7 @@ button {
   color: dimgray;
   font-size: 16px;
 }
-button:hover {
+.search button:hover {
   background-color: darkgrey;
 }
 .movie-card {
@@ -57,8 +62,23 @@ button:hover {
   padding: 10px;
   margin-top: 10px;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 160px 1fr;
 }
 .movie-card img {
-  width: 220px;
+  width: 130px;
+}
+
+.sticks {
+  margin-top: 100px;
+}
+.sticks button {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  float: right;
+  border: 0;
+  margin: 5px 0;
+}
+.sticks button:hover {
+  background-color: brown;
 }

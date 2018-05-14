@@ -5,10 +5,8 @@ const MovieCard = ({movie}) => {
         <div className='movie-card'>
             <img src={movie.Poster}/>
             <div>
-                <p>Название: {movie.Title}</p>
-                <p>Год: {movie.Year}</p>
-                <p>Production: {movie.Production}</p>
-                <p>Rating: {movie.imdbRating}</p>
+                <p>{movie.Year}</p>
+                <p>{movie.Title}</p>
             </div>
         </div>
     );

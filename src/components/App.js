@@ -15,20 +15,32 @@ const App = (props) => {
 
       let {movie} = props
       return (
-          <div>
-              <header>
-                  <h1>Kinoman</h1>
-                  <div className='search'>
-                      <input type="text" placeholder='Search...' ref={(input) => {this.movInput = input}}/>
-                      <button type="submit" onClick={searchMovie}><i className="fas fa-search"/></button>
-                  </div>
-              </header>
-              <div>
-                  {
-                   movie.map((mov, i) =>
-                       <MovieCard key={i} movie={mov}/>
-                  )}
-              </div>
+          <div className='container'>
+            <div>
+                <nav className='sticks'>
+                    <button>Marvel</button>
+                    <button>Marvel</button>
+                    <button>Marvel</button>
+                    <button>Marvel</button>
+                    <button>Marvel</button>
+                    <button>Marvel</button>
+                </nav>
+            </div>
+            <div className='finder'>
+                <header>
+                    <h1>Kinoman</h1>
+                    <div className='search'>
+                        <input placeholder='Search...' ref={(input) => {this.movInput = input}}/>
+                        <button onClick={searchMovie}><i className="fas fa-search"/></button>
+                    </div>
+                </header>
+                <div>
+                    {
+                        movie.map((mov, i) =>
+                            <MovieCard key={i} movie={mov}/>
+                        )}
+                </div>
+            </div>
           </div>
       );
 
