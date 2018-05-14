@@ -6,7 +6,7 @@ const MovieCard = ({movie}) => {
             <img src={movie.Poster}/>
             <div>
                 <p>Название: {movie.Title}</p>
-                <p>Год: {movie.Released}</p>
+                <p>Год: {movie.Year}</p>
                 <p>Production: {movie.Production}</p>
                 <p>Rating: {movie.imdbRating}</p>
             </div>

@@ -3,13 +3,13 @@ import MovieCard from './MovieCard'
 import {connect} from 'react-redux'
 
 const API_KEY = 'cb02f59c';
-const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
+const searchRequest = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 const App = (props) => {
 
      const searchMovie = () => {
          console.log(this.movInput.value)
-         props.onSearchMovie()
+         props.onSearchMovie(this.movInput.value)
          this.movInput.value = ''
      }
 
@@ -19,7 +19,7 @@ const App = (props) => {
               <header>
                   <h1>Kinoman</h1>
                   <div className='search'>
-                      <input type="text" placeholder='Поиск...' ref={(input) => {this.movInput = input}}/>
+                      <input type="text" placeholder='Search...' ref={(input) => {this.movInput = input}}/>
                       <button type="submit" onClick={searchMovie}><i className="fas fa-search"/></button>
                   </div>
               </header>
@@ -39,8 +39,8 @@ export default connect(
         movie: store
     }),
     dispatch => ({
-        onSearchMovie: () => {
-            fetch(url)
+        onSearchMovie: (req) => {
+            fetch(searchRequest+req)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
