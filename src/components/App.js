@@ -2,14 +2,14 @@ import React from 'react';
 import MovieCard from './MovieCard'
 import {connect} from 'react-redux'
 
-//const API_KEY = 'cb02f59c';
-//const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
+const API_KEY = 'cb02f59c';
+const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
 
 const App = (props) => {
 
      const searchMovie = () => {
          console.log(this.movInput.value)
-         props.onSearchMovie(this.movInput.value)
+         props.onSearchMovie()
          this.movInput.value = ''
      }
 
@@ -25,8 +25,8 @@ const App = (props) => {
               </header>
               <div>
                   {
-                   movie.map((el, i) =>
-                       <MovieCard key={i} movie={el}/>
+                   movie.map((mov, i) =>
+                       <MovieCard key={i} movie={mov}/>
                   )}
               </div>
           </div>
@@ -39,8 +39,13 @@ export default connect(
         movie: store
     }),
     dispatch => ({
-        onSearchMovie: (mov) => {
-            dispatch({type: 'SEARCH_MOVIE', payload: mov})
+        onSearchMovie: () => {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    dispatch({type: 'SEARCH_MOVIE', payload: data})
+                })
         }
     })
 )(App);
