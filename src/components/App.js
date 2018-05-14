@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
-import Finder from './MovieCard'
+import React from 'react';
+import MovieCard from './MovieCard'
 import {connect} from 'react-redux'
-import axios from "axios";
 
 const API_KEY = 'cb02f59c';
 const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=' + API_KEY;
 
-class App extends Component {
+const App = (props) => {
 
-   getMovie() {
-      axios.get(url)
-          .then(res => {
-              const movie = res.data;
-              this.setState({ movie });
-          })
-   }
-
-   render() {
+      let {movie} = props
       return (
           <div>
               <header>
@@ -27,18 +18,19 @@ class App extends Component {
                   </form>
               </header>
               <div>
-                  <Finder movie={this.props.movie}/>
+                  {
+                      movie.map((el) =>
+                          <MovieCard movie={el}></MovieCard>
+                      )}
               </div>
           </div>
       );
-  }
+
 }
 
-
-function mapStoreToProps(store) {
-    return {
+export default connect(
+    store => ({
         movie: store
-    }
-}
-
-export default connect(mapStoreToProps)(App);
+    }),
+    dispatch => {}
+)(App);
