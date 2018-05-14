@@ -52,8 +52,13 @@ button {
 button:hover {
   background-color: darkgrey;
 }
-.finder {
+.movie-card {
   background-color: lightgray;
   padding: 10px;
   margin-top: 10px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+.movie-card img {
+  width: 220px;
 }
