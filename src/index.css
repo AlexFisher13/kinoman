@@ -74,11 +74,18 @@ button:focus{
 .sticks button {
   width: 100px;
   height: 50px;
-  background-color: red;
   float: right;
+  background-color: transparent;
   border: 0;
   margin: 5px 0;
+  opacity: .65;
+  cursor: pointer;
+  transition: .4s;
+}
+.sticks button img {
+  width: 100%;
 }
 .sticks button:hover {
-  background-color: brown;
+  opacity: 1;
+  width: 120px;
 }

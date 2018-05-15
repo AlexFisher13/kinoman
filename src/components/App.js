@@ -18,12 +18,10 @@ const App = (props) => {
           <div className='container'>
             <div>
                 <nav className='sticks'>
-                    <button>Marvel</button>
-                    <button>Marvel</button>
-                    <button>Marvel</button>
-                    <button>Marvel</button>
-                    <button>Marvel</button>
-                    <button>Marvel</button>
+                    <button><img src="/img/marvel-disney.png"/></button>
+                    <button><img src="/img/marvel-fox.png"/></button>
+                    <button><img src="/img/marvel.png"/></button>
+                    <button><img src="/img/dc.png"/></button>
                 </nav>
             </div>
             <div className='finder'>
