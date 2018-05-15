@@ -34,7 +34,7 @@ const App = (props) => {
                         <button onClick={searchMovie}><i className="fas fa-search"/></button>
                     </div>
                 </header>
-                <div>
+                <div className='results'>
                     {
                         movie.map((mov, i) =>
                             <MovieCard key={i} movie={mov}/>
