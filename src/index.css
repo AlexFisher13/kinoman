@@ -97,7 +97,7 @@ button:focus{
 }
 .sticks button:hover {
   opacity: 1;
-  width: 120px;
+  width: 110px;
 }
 .results {
   margin-top: 10px;

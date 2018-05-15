@@ -6,6 +6,7 @@ const API_KEY = 'cb02f59c';
 const searchRequest = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 const App = (props) => {
+     let {movie} = props
 
      const searchMovie = () => {
          console.log(this.movInput.value)
@@ -13,16 +14,15 @@ const App = (props) => {
          this.movInput.value = ''
      }
 
-      let {movie} = props
       return (
           <div className='container'>
             <div>
                 <nav className='sticks'>
-                    <button><img src="/img/marvel-disney.png"/></button>
-                    <button><img src="/img/marvel-fox.png"/></button>
                     <button><img src="/img/marvel.png"/></button>
-                    <button><img src="/img/dc.png"/></button>
                     <button><img src="/img/star-wars.png"/></button>
+                    <button><img src="/img/marvel-disney.png"/></button>
+                    <button><img src="/img/dc.png"/></button>
+                    <button><img src="/img/marvel-fox.png"/></button>
                     <button><img src="/img/ring-lord.png"/></button>
                 </nav>
             </div>
