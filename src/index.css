@@ -71,11 +71,25 @@ button:focus{
 }
 .movie-card {
   background-color: lightgray;
-  padding: 10px;
   text-align: center;
+  cursor: pointer;
 }
-.movie-card img {
+.poster {
+  overflow: hidden;
   height: 300px;
+}
+.poster img {
+  height: 300px;
+  width: 200px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.poster img:hover {
+  height: 330px;
+  width: 220px;
 }
 
 .sticks {
