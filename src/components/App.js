@@ -28,7 +28,7 @@ const App = (props) => {
             </div>
             <div className='finder'>
                 <header>
-                    <h1>Kinoman</h1>
+                    <h1>GeekMovies</h1>
                     <div className='search'>
                         <input placeholder='Search...' ref={(input) => {this.movInput = input}}/>
                         <button onClick={searchMovie}><i className="fas fa-search"/></button>
