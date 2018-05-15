@@ -28,13 +28,13 @@ h1 {
   color: white;
 }
 h2 {
-  margin: 7px 0;
+  margin: 0 0 10px 0;
   font-weight: 600;
   font-size: 20px;
   color: rgba(0,0,0,.7);
 }
 h3 {
-  margin: 7px 0;
+  margin: 5px 0 0 0;
   color: darkgoldenrod;
   font-weight: 700;
   font-size: 19px;
@@ -70,22 +70,23 @@ button:focus{
   background-color: darkgrey;
 }
 .movie-card {
-  background-color: lightgray;
+  background-color: gainsboro;
   text-align: center;
   cursor: pointer;
 }
 .poster {
   overflow: hidden;
   height: 300px;
+  padding-top: 10px;
 }
 .poster img {
   height: 300px;
   width: 200px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
 .poster img:hover {
   height: 330px;
