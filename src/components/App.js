@@ -22,6 +22,8 @@ const App = (props) => {
                     <button><img src="/img/marvel-fox.png"/></button>
                     <button><img src="/img/marvel.png"/></button>
                     <button><img src="/img/dc.png"/></button>
+                    <button><img src="/img/star-wars.png"/></button>
+                    <button><img src="/img/ring-lord.png"/></button>
                 </nav>
             </div>
             <div className='finder'>
