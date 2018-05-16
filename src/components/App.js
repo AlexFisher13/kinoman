@@ -4,12 +4,10 @@ import {connect} from 'react-redux'
 
 const API_KEY = 'cb02f59c';
 const searchRequest = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
-
 const App = (props) => {
      let {movie} = props
 
      const searchMovie = () => {
-         console.log(this.movInput.value)
          props.onSearchMovie(this.movInput.value)
          this.movInput.value = ''
      }
@@ -18,12 +16,12 @@ const App = (props) => {
           <div className='container'>
             <div>
                 <nav className='sticks'>
-                    <button><img src="/img/marvel.png"/></button>
-                    <button><img src="/img/star-wars.png"/></button>
-                    <button><img src="/img/marvel-disney.png"/></button>
-                    <button><img src="/img/dc.png"/></button>
-                    <button><img src="/img/marvel-fox.png"/></button>
-                    <button><img src="/img/ring-lord.png"/></button>
+                    <button onClick={props.getMarvel}><img src="/img/marvel.png"/></button>
+                    <button onClick={props.getStarWars}><img src="/img/star-wars.png"/></button>
+                    <button onClick={props.getMarvelDisney}><img src="/img/marvel-disney.png"/></button>
+                    <button onClick={props.getDC}><img src="/img/dc.png"/></button>
+                    <button onClick={props.getMarvelFox}><img src="/img/marvel-fox.png"/></button>
+                    <button onClick={props.getRingLord}><img src="/img/ring-lord.png"/></button>
                 </nav>
             </div>
             <div className='finder'>
@@ -58,6 +56,24 @@ export default connect(
                     console.log(data)
                     dispatch({type: 'SEARCH_MOVIE', payload: data})
                 })
+            },
+        getMarvel: () => {
+            dispatch({type: 'PLAYLIST_MARVEL'})
+        },
+        getStarWars: () => {
+            dispatch({type: 'PLAYLIST_STAR_WARS'})
+        },
+        getMarvelDisney: () => {
+            dispatch({type: 'PLAYLIST_MARVEL_DISNEY'})
+        },
+        getDC: () => {
+            dispatch({type: 'PLAYLIST_DC'})
+        },
+        getMarvelFox: () => {
+            dispatch({type: 'PLAYLIST_MARVEL_FOX'})
+        },
+        getRingLord: () => {
+            dispatch({type: 'PLAYLIST_MARVEL_FOX'})
         }
     })
 )(App);
