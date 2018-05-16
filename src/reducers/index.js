@@ -3,7 +3,7 @@ import starWars from '../store/starWars'
 import marvelDisney from '../store/marvelDisney'
 import dc from '../store/dc'
 import marvelFox from '../store/marvelFox'
-import ringLord from '../store/ring-lord'
+import ringLord from '../store/ringLord'
 
 export default function movieState(store=marvelFox, action) {
     switch (action.type) {

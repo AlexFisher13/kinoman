@@ -8,7 +8,7 @@ const App = (props) => {
      let {movie} = props
 
      const searchMovie = () => {
-         props.onSearchMovie(this.movInput.value)
+         props.onSearchMovie(this.movInput.value.replace(/ /gi, '+'))
          this.movInput.value = ''
      }
 
@@ -73,7 +73,7 @@ export default connect(
             dispatch({type: 'PLAYLIST_MARVEL_FOX'})
         },
         getRingLord: () => {
-            dispatch({type: 'PLAYLIST_MARVEL_FOX'})
+            dispatch({type: 'PLAYLIST_RING_LORD'})
         }
     })
 )(App);
