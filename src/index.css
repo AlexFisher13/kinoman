@@ -110,6 +110,7 @@ button:focus{
 .sticks button img {
   width: 100%;
 }
+button.active,
 .sticks button:hover {
   opacity: 1;
   width: 110px;

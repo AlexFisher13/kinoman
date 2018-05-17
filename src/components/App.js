@@ -16,12 +16,12 @@ const App = (props) => {
           <div className='container'>
             <div>
                 <nav className='sticks'>
-                    <button onClick={props.getMarvel}><img src="img/marvel.png" alt="marvel"/></button>
-                    <button onClick={props.getStarWars}><img src="img/star-wars.png" alt="star wars"/></button>
-                    <button onClick={props.getMarvelDisney}><img src="img/marvel-disney.png" alt="marvel"/></button>
-                    <button onClick={props.getDC}><img src="img/dc.png" alt="dc"/></button>
-                    <button onClick={props.getMarvelFox}><img src="img/marvel-fox.png" alt="marvel"/></button>
-                    <button onClick={props.getRingLord}><img src="img/ring-lord.png" alt="rings"/></button>
+                    <button onClick={props.getMarvel} ref={(btn) => {this.marvel = btn}}><img src="img/marvel.png" alt="marvel"/></button>
+                    <button onClick={props.getStarWars} ref={(btn) => {this.starWars = btn}}><img src="img/star-wars.png" alt="star wars"/></button>
+                    <button onClick={props.getMarvelDisney} ref={(btn) => {this.marvelDisney = btn}}><img src="img/marvel-disney.png" alt="marvel"/></button>
+                    <button onClick={props.getDC} ref={(btn) => {this.dc = btn}}><img src="img/dc.png" alt="dc"/></button>
+                    <button onClick={props.getMarvelFox} ref={(btn) => {this.marvelFox = btn}}><img src="img/marvel-fox.png" alt="marvel"/></button>
+                    <button onClick={props.getRingLord} ref={(btn) => {this.ringLord = btn}}><img src="img/ring-lord.png" alt="rings"/></button>
                 </nav>
             </div>
             <div className='finder'>
@@ -58,21 +58,32 @@ export default connect(
                 })
             },
         getMarvel: () => {
+            var arr = document.getElementsByClassName('active');
+            for (var i=0; i < arr.length; i++){
+                console.log(arr[i])
+                arr[i].classList.remove('active')
+            }
+            this.marvel.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL'})
         },
         getStarWars: () => {
+            this.starWars.className = 'active'
             dispatch({type: 'PLAYLIST_STAR_WARS'})
         },
         getMarvelDisney: () => {
+            this.marvelDisney.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL_DISNEY'})
         },
         getDC: () => {
+            this.dc.className = 'active'
             dispatch({type: 'PLAYLIST_DC'})
         },
         getMarvelFox: () => {
+            this.marvelFox.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL_FOX'})
         },
         getRingLord: () => {
+            this.ringLord.className = 'active'
             dispatch({type: 'PLAYLIST_RING_LORD'})
         }
     })
