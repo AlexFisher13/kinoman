@@ -12,6 +12,14 @@ const App = (props) => {
          this.movInput.value = ''
      }
 
+     const removeActive = () => {
+         const arr = document.getElementsByClassName('active');
+         for (let i=0; i < arr.length; i++){
+             console.log(arr[i])
+             arr[i].attributes.removeNamedItem('class')
+         }
+     }
+
       return (
           <div className='container'>
             <div>
@@ -58,32 +66,29 @@ export default connect(
                 })
             },
         getMarvel: () => {
-            var arr = document.getElementsByClassName('active');
-            for (var i=0; i < arr.length; i++){
-                console.log(arr[i])
-                arr[i].classList.remove('active')
-            }
-            this.marvel.className = 'active'
+            // const arr = document.getElementsByClassName('active');
+            // arr.forEach(el => el.attributes.removeNamedItem('class'))
+            // this.marvel.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL'})
         },
         getStarWars: () => {
-            this.starWars.className = 'active'
+            // this.starWars.className = 'active'
             dispatch({type: 'PLAYLIST_STAR_WARS'})
         },
         getMarvelDisney: () => {
-            this.marvelDisney.className = 'active'
+            // this.marvelDisney.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL_DISNEY'})
         },
         getDC: () => {
-            this.dc.className = 'active'
+            // this.dc.className = 'active'
             dispatch({type: 'PLAYLIST_DC'})
         },
         getMarvelFox: () => {
-            this.marvelFox.className = 'active'
+            // this.marvelFox.className = 'active'
             dispatch({type: 'PLAYLIST_MARVEL_FOX'})
         },
         getRingLord: () => {
-            this.ringLord.className = 'active'
+            // this.ringLord.className = 'active'
             dispatch({type: 'PLAYLIST_RING_LORD'})
         }
     })

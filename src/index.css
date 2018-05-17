@@ -9,10 +9,6 @@ body {
   grid-template-columns: 0.7fr;
   justify-content: center;
 }
-/*div {*/
-  /*border: 1px solid red;*/
-/*}*/
-
 .container {
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -102,7 +98,7 @@ button:focus{
   float: right;
   background-color: transparent;
   border: 0;
-  margin: 5px 0;
+  margin: 10px 0;
   opacity: .65;
   cursor: pointer;
   transition: .4s;
@@ -113,7 +109,8 @@ button:focus{
 button.active,
 .sticks button:hover {
   opacity: 1;
-  width: 110px;
+  width: 130%;
+  height: 130%;
 }
 .results {
   margin-top: 10px;
