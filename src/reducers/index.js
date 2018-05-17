@@ -23,6 +23,6 @@ export default function movieState(store=marvelFox, action) {
             return marvelFox
         case('PLAYLIST_RING_LORD'):
             return ringLord
+        default: return store
     }
-    return store
 }

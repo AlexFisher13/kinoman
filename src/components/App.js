@@ -16,12 +16,12 @@ const App = (props) => {
           <div className='container'>
             <div>
                 <nav className='sticks'>
-                    <button onClick={props.getMarvel}><img src="/img/marvel.png"/></button>
-                    <button onClick={props.getStarWars}><img src="/img/star-wars.png"/></button>
-                    <button onClick={props.getMarvelDisney}><img src="/img/marvel-disney.png"/></button>
-                    <button onClick={props.getDC}><img src="/img/dc.png"/></button>
-                    <button onClick={props.getMarvelFox}><img src="/img/marvel-fox.png"/></button>
-                    <button onClick={props.getRingLord}><img src="/img/ring-lord.png"/></button>
+                    <button onClick={props.getMarvel}><img src="img/marvel.png" alt="marvel"/></button>
+                    <button onClick={props.getStarWars}><img src="img/star-wars.png" alt="star wars"/></button>
+                    <button onClick={props.getMarvelDisney}><img src="img/marvel-disney.png" alt="marvel"/></button>
+                    <button onClick={props.getDC}><img src="img/dc.png" alt="dc"/></button>
+                    <button onClick={props.getMarvelFox}><img src="img/marvel-fox.png" alt="marvel"/></button>
+                    <button onClick={props.getRingLord}><img src="img/ring-lord.png" alt="rings"/></button>
                 </nav>
             </div>
             <div className='finder'>
