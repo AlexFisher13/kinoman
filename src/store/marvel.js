@@ -12,5 +12,4 @@ export default [
     {Title: "Ghost Rider: Spirit of Vengeance", Year: "2011", imdbID: "tt1071875", Type: "movie", Poster: "https://ia.media-imdb.com/images/M/MV5BMTkwNDM5MDEzOF5BMl5BanBnXkFtZTcwNDEyNTUxNw@@._V1_SX300.jpg"},
     {Title: "The Amazing Spider-Man", Year: "2012", imdbID: "tt0948470", Type: "movie", Poster: "https://ia.media-imdb.com/images/M/MV5BMjMyOTM4MDMxNV5BMl5BanBnXkFtZTcwNjIyNzExOA@@._V1_SX300.jpg"},
     {Title: "The Amazing Spider-Man 2", Year: "2014", imdbID: "tt1872181", Type: "movie", Poster: "https://ia.media-imdb.com/images/M/MV5BOTA5NDYxNTg0OV5BMl5BanBnXkFtZTgwODE5NzU1MTE@._V1_SX300.jpg"},
-
 ]
