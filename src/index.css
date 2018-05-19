@@ -11,7 +11,7 @@ body {
 }
 .container {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: minmax(50px, 120px) 1fr;
 }
 header {
   padding: 0 30px;
@@ -115,6 +115,25 @@ button.active,
 .results {
   margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
+}
+@media screen and (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  h1 {
+    margin: 5px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .search {
+    margin-bottom: 5px;
+  }
+  .sticks button {
+    width: 60px;
+    height: 30px;
+    margin: 5px 0;
+  }
 }

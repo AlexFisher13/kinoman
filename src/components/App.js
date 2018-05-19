@@ -12,14 +12,6 @@ const App = (props) => {
          this.movInput.value = ''
      }
 
-     const removeActive = () => {
-         const arr = document.getElementsByClassName('active');
-         for (let i=0; i < arr.length; i++){
-             console.log(arr[i])
-             arr[i].attributes.removeNamedItem('class')
-         }
-     }
-
       return (
           <div className='container'>
             <div>
