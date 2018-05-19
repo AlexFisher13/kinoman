@@ -18,11 +18,7 @@ const App = (props) => {
 
      }
 
-     const keyPressed = (event) => {
-         if(event.keyCode === 13){
-             searchMovie()
-         }
-     }
+     const keyPressed = (event) => {if(event.keyCode === 13) searchMovie()}
 
       return (
           <div className='container'>
