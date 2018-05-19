@@ -12,6 +12,12 @@ const App = (props) => {
          this.movInput.value = ''
      }
 
+     const keyPressed = (event) => {
+         if(event.keyCode === 13){
+             searchMovie()
+         }
+     }
+
       return (
           <div className='container'>
             <div>
@@ -28,7 +34,7 @@ const App = (props) => {
                 <header>
                     <h1>GeekMovies</h1>
                     <div className='search'>
-                        <input placeholder='Search...' ref={(input) => {this.movInput = input}}/>
+                        <input onKeyDown={keyPressed} placeholder='Search...' ref={(input) => {this.movInput = input}}/>
                         <button onClick={searchMovie}><i className="fas fa-search"/></button>
                     </div>
                 </header>
