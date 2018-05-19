@@ -8,8 +8,14 @@ const App = (props) => {
      let {movie} = props
 
      const searchMovie = () => {
-         props.onSearchMovie(this.movInput.value.replace(/ /gi, '+'))
-         this.movInput.value = ''
+         const regex = /^(\w+:*-*\s*:*-*)+$/;
+         if(regex.test(this.movInput.value)) {
+            props.onSearchMovie(this.movInput.value.replace(/ /gi, '+'))
+            this.movInput.value = ''
+         } else {
+             alert("Incorrect title")
+         }
+
      }
 
      const keyPressed = (event) => {
@@ -34,7 +40,9 @@ const App = (props) => {
                 <header>
                     <h1>GeekMovies</h1>
                     <div className='search'>
-                        <input onKeyDown={keyPressed} placeholder='Search...' ref={(input) => {this.movInput = input}}/>
+                        <input onKeyDown={keyPressed}
+                               placeholder='Search by english movie title'
+                               ref={(input) => {this.movInput = input}}/>
                         <button onClick={searchMovie}><i className="fas fa-search"/></button>
                     </div>
                 </header>
@@ -63,31 +71,11 @@ export default connect(
                     dispatch({type: 'SEARCH_MOVIE', payload: data})
                 })
             },
-        getMarvel: () => {
-            // const arr = document.getElementsByClassName('active');
-            // arr.forEach(el => el.attributes.removeNamedItem('class'))
-            // this.marvel.className = 'active'
-            dispatch({type: 'PLAYLIST_MARVEL'})
-        },
-        getStarWars: () => {
-            // this.starWars.className = 'active'
-            dispatch({type: 'PLAYLIST_STAR_WARS'})
-        },
-        getMarvelDisney: () => {
-            // this.marvelDisney.className = 'active'
-            dispatch({type: 'PLAYLIST_MARVEL_DISNEY'})
-        },
-        getDC: () => {
-            // this.dc.className = 'active'
-            dispatch({type: 'PLAYLIST_DC'})
-        },
-        getMarvelFox: () => {
-            // this.marvelFox.className = 'active'
-            dispatch({type: 'PLAYLIST_MARVEL_FOX'})
-        },
-        getRingLord: () => {
-            // this.ringLord.className = 'active'
-            dispatch({type: 'PLAYLIST_RING_LORD'})
-        }
+        getMarvel: () => {dispatch({type: 'PLAYLIST_MARVEL'})},
+        getStarWars: () => {dispatch({type: 'PLAYLIST_STAR_WARS'})},
+        getMarvelDisney: () => {dispatch({type: 'PLAYLIST_MARVEL_DISNEY'})},
+        getDC: () => {dispatch({type: 'PLAYLIST_DC'})},
+        getMarvelFox: () => {dispatch({type: 'PLAYLIST_MARVEL_FOX'})},
+        getRingLord: () => {dispatch({type: 'PLAYLIST_RING_LORD'})}
     })
 )(App);
